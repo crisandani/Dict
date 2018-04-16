@@ -37,10 +37,10 @@ margin:10px;
 	color:white;
 	background:#2f3640;
 	position:absolute;
-	left:28.5%;
+	left:25%;
 	top:40%;
-	width:480px;
-	height:30px;
+	width:40%;
+	height:59px;
 	padding:10px;
 	font-size:20px;
 	letter-spacing:3px;
@@ -55,7 +55,7 @@ margin:10px;
 	color:#e84118;
 	position:absolute;
 	background:#2f3640;
-	width:100px;
+	width:5%;
 	padding:13px;
 	font-size:20px;
 	border:solid 1.5px #2f3640;
@@ -75,51 +75,6 @@ margin:10px;
 	text-shadow:0 0 20px #e84118;
 	width:80px;
 	height:80px;
-}
-/*#SearchBar{
-	/*color:black;
-background-color:White;
-position:absolute;
-text-align:center;
-font-family:"proxima nova";
-font-size:1.5em;
-left:33%;
-top:50%;
-width:450px;
-height:30px;
-border: solid 2px #ffee10;
-border-radius:50px;
-}
-#SearchBar{
-	background:#333;
-	border:solid 2px #ffee10;
-	border-radius:50px;
-	font-size:30px;
-	color:#666;
-	transition:.5s;
+	
 }
 
-
-
-#SearchButton{
-	background-color:#333;
-	color:#666;
-	font-family:"proxima nova";
-	font-size:2em;
-	font-weight:normal;
-	text-align:50% 50%;
-	position:absolute;
-	left:45%;
-	bottom:35%;
-	width:100px;
-	height:50px;
-	
-	
-	border:solid 2px #ffee10;
-	border-radius:50px;
-	
-	padding:10px 80px;
-	
-	-webkit-transition-duration:200ms;
-	transition-duration:200ms;
-}*/

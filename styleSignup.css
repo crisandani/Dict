@@ -11,7 +11,7 @@ body{
 	 background:#2f3640;
 	 transform:translate(-50%,-50%);
 	 box-sizing:border-box;
-	 padding:70px;
+	 padding:70px 30px;
 	 
 	
  }
@@ -54,16 +54,6 @@ body{
 	border-radius:50px;
 	font-size:18px;
 	transition:0.3s;
-}
-.SignUp input[type="date"]
-{
-	border:none;
-	outline:none;
-	background:transparent;
-	color:#fff;
-	font-size:16px;
-	border-bottom:20px;
-	border-bottom:1px solid #e84118;
 }
 .SignUp input[type="submit"]:hover{
 	height:50px;
