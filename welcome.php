@@ -16,7 +16,7 @@ if(!isset($_SESSION['username']))
  <div class="butoane1">
 <ul>
     <form>
-		<a href="login.php?action=logout"><button class="Butoane" type="button" title="Logout"><i class="fa fa-sign-out"></i></button></a>
+		<a href="login.php?action='logout'"><button class="Butoane" type="button" title="Logout"><i class="fa fa-sign-out"></i></button></a>
 	</form>
 </ul> </div>
 

@@ -12,6 +12,21 @@ if(isset($_POST['signup'])){
         alert("completati toate campurile");
         echo '<script>window.location.href = "signup.php";</script>';
     }
+	//verificare duplicate
+	$result1=$conn->query("Select e_mail from users where e_mail='$user'");
+	if(mysqli_num_rows($result1))
+    {
+       $row1=mysqli_fetch_row($result1);
+     if($row1[0]==$user){
+		 
+	 alert("Adresa de email exista deja ");
+	 
+     //echo '<script>window.location.href = "signup.php";</script>';
+	 }
+	 
+    }else{
+	 
+	 //introducere in baza de date		
     $result=$conn->query("insert into users(first_name,last_name,e_mail,password,birthday) "
             . "values('$nume','$prenume','$user','$pass','$date')");
     if(!$result)
@@ -21,6 +36,11 @@ if(isset($_POST['signup'])){
 	echo '<script>window.location.href = "index.html";</script>';
 	
 	}
+	 
+	 }
+	
+			
+	
 }
 ?>
 <html>

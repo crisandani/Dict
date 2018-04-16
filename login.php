@@ -30,7 +30,8 @@ if($_GET['action']=='logout'){
 $msg='ok';
 echo "<script type='text/javascript'>alert('$msg');</script>";
 	session_start();
-	session_unset();
+	//session_unset();
+	unset($_SESSION['username']);
 	session_destroy();
 	//echo '<script>window.location.href = "login.php";</script>';
 	
