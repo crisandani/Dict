@@ -18,11 +18,11 @@ include'session.php';
  <body>
  
  
- <!--<div class="dropdown">
+<div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Contul meu</button>
   <div id="myDropdown" class="dropdown-content">
   <p id="Hi">Salut, <?php echo $_SESSION['nume']; ?><p>
-    <a href="logout.php">Log Out</a>-->
+    <a href="logout.php">Log Out</a>
    
   </div>
 </div>
