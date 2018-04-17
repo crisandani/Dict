@@ -1,0 +1,112 @@
+ body{
+    background-color:#202a3f;
+	/*background-color:#e84118;*/
+   }
+   .dropbtn {
+	   
+    background-color: #e84118;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #f93b3b;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #202a3f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+table, tr,th, td {
+	border-spacing: 15px;
+    text-align: center;
+	color: white;
+	padding: 15px;
+}
+#Hi{
+	color: #f93b3b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	border:none;
+	border-bottom:1px solid #e84118;
+}
+.dropdown-content a:hover {background-color: #f93b3b}
+.show {display:block;}
+
+.butoane1{
+position:absolute;
+list-style-type:none;
+right:10px;
+top:10px;
+padding:10px;
+margin:10px;
+}
+.checkbox{
+	color:white;
+	position:absolute;
+	list-style-type:none;
+	top:50%;
+	left:35%;
+}
+.Butoane{
+	color:#e84118;
+	/*background-color:#ffee10;*/
+	background-color:#2f3640;
+    width:120px;
+    height:120px;
+	/*border:solid 1.5px #ffee10;*/
+	border:solid 1.5px #2f3640;
+	border-radius:100%;
+	font-size:1.5em;
+	transition:.3s;
+	outline:none;
+	
+	}
+
+.Butoane:hover{
+	color:#e84118;
+	text-shadow:0 0 30px #e84118;
+	width:130px;
+	height:130px;
+	
+}
+.Sterge{
+	color:#e84118;
+	/*background-color:#ffee10;*/
+	background-color:#2f3640;
+    width:100px;
+    height:40px;
+	/*border:solid 1.5px #ffee10;*/
+	border:solid 1.5px #2f3640;
+	border-radius:100%;
+	font-size:1.5em;
+	transition:.3s;
+	outline:none;
+	
+	}
+
+.Sterge:hover{
+	color:#e84118;
+	text-shadow:0 0 20px #e84118;
+	width:105px;
+	height:45px;
+	
+}
+
+
