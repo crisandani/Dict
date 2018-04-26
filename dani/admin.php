@@ -4,6 +4,7 @@
 include'session.php';
 $sql='select first_name,last_name,e_mail,password,birthday from users';
 //$sql='select first_name,last_name,e_mail,password,birthday from users where first_name<>"Admin"';
+//$sql='select first_name,last_name,e_mail,password,birthday from users where first_name not like"%Admin"';
 $result=mysqli_query($db,$sql);
 /*
 if(mysqli_num_rows($result))
@@ -21,8 +22,11 @@ if(mysqli_num_rows($result))
 	$aux=array();
 $l=$k=0;
 	while($row=mysqli_fetch_array($result)){
-		$k++;
+		
+		if($row['e_mail']!=$user_check){
 		array_push($aux,$row['first_name'],$row['last_name'],$row['e_mail'],$row['password'],$row['birthday']);
+		$k++;
+		}
 	}
 		
 		

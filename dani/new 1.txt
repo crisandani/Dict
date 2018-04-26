@@ -1,0 +1,9 @@
+
+id
+id-keyword
+link-text
+link-img
+my-binary (pdf, doc, png,xml,json,txt, etc)
+my-type
+
+
