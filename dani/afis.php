@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 include'session.php';
-$sql='select name,description from words';
+$sql='select name,short,description from words';
 
 $result=mysqli_query($db,$sql);
 
@@ -10,7 +10,7 @@ $l=$k=0;
 	while($row=mysqli_fetch_array($result)){
 		
 		
-		array_push($aux,$row['name'],$row['description']);
+		array_push($aux,$row['name'],$row['short'],$row['description']);
 		$k++;
 		//echo" <h2>$row['name']</h2>;
 			
@@ -58,6 +58,7 @@ for ($i = 0;$i<$k;$i++) {
    
         
             echo "<h2 style='color:red'>".$aux[$l++]."</h2>\n";
+			echo "<h5 style='color:green'>".$aux[$l++]."</h5>\n";
 			 echo "<p style='color:white'>".$aux[$l++]."</p>\n";
 			
 					
