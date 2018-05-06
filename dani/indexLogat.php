@@ -3,6 +3,7 @@
  
 include'session.php';
 
+
 ?>
 
 <html lang="en">
@@ -39,12 +40,12 @@ include'session.php';
 		 <input type="checkbox" name="automatizari" value="automatizari">Automatizari
 		
 		 </form></ul></div>
-  <form>
 
-<form>
+
+<form action="search.php" method="post">
 <div class="container">
-	<input id="SearchBar" type="text" name="SearchBar" placeholder="Caută...">
-	<button id="Search" type="submit">
+	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
+	<button id="Search" href="search.php" name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
 	</div>
 </form>
