@@ -25,11 +25,13 @@
         
          $_SESSION['login_user'] = $myusername;
 		 
-		
-		
+		alert($_SESSION['login_user']);
+		if($_SESSION['login_user']=="admin@yahoo.com")
+			header("location: admin.php");
+		 else{         
 		 
-         
          header("location: indexLogat.php");
+		 }
       }else {
          $error = 'Your Login Name or Password is invalid';
 		 alert($error);
