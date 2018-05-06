@@ -3,15 +3,39 @@
 	
 $min=1;
 
-	if(isset($_POST['Search'])){
-	$search=$_POST['Search'];
+	if(isset($_POST['Search']))
+	{
+		$search=$_POST['Search'];
 	if(strlen($search)<$min){
 		$output='<div id="eroare">'."Trebuie sa introduci cel putin un caracter !".'</div>';
 	}else{
 	$search = htmlspecialchars($search);
 	$search = mysqli_real_escape_string($db,$search);
+		
+		//verifica daca sunt selectate ambele capitole sau nici unul
+		if((isset($_POST['It'])&&isset($_POST['Automatizari']))||(!isset($_POST['It'])&&!isset($_POST['Automatizari'])))
+		{
+			$query=mysqli_query($db,"SELECT * FROM words WHERE name LIKE '%$search%'") or die(mysql_error());
+			
+		}else{
+			//verifica daca este selectat cap. it
+			if(isset($_POST['It']))
+			{
+			$capitol=$_POST['It'];
+			}
+			else {
+			//verifica daca este selectat cap. automatizari
+			if(isset($_POST['Automatizari']))			
+				$capitol=$_POST['Automatizari']; 
+			
+				}
+				//var_dump($capitol);
+				$query=mysqli_query($db,"SELECT words.* from (words JOIN capitol_words ON words.id=capitol_words.word_id) join capitol on capitol.id= capitol_words.capitol_id WHERE words.name like '%$search%' and capitol_words.capitol_id=$capitol") or die(mysql_error());
+		}
+		
 	
-	$query=mysqli_query($db,"SELECT * FROM words WHERE name LIKE '%$search%'") or die(mysql_error());
+	
+	
 	
 	if(mysqli_num_rows($query) > 0) {
 	
