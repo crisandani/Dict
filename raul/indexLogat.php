@@ -40,9 +40,9 @@ include'session.php';
 		 <input type="checkbox" name="automatizari" value="automatizari">Automatizari
 		
 		 </form></ul></div>
-  <form>
 
-<form action="" method="post">
+
+<form action="search.php" method="post">
 <div class="container">
 	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
 	<button id="Search" href="search.php" name="Submit" type="submit">

@@ -30,8 +30,7 @@
 		 <input type="checkbox" name="automatizari" value="automatizari">Automatizari
 		
 		 </form></ul></div>
-  <form>
-
+		 
 <form action="search.php" method="post">
 <div class="container">
 	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
