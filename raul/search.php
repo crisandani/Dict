@@ -1,11 +1,13 @@
 <?php
+
 	include("connection.php");
+
 	
-$min=1;
+$min=1;// minim caracter
 
 	if(isset($_POST['Search'])){
 	$search=$_POST['Search'];
-	if(strlen($search)<$min){
+	if(strlen($search)<$min){//verificare min caractere
 		$output='<div id="eroare">'."Trebuie sa introduci cel putin un caracter !".'</div>';
 	}else{
 	$search = htmlspecialchars($search);
@@ -42,9 +44,9 @@ $min=1;
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<form>
-<button id="buton">Home</button>
-</form>
+
+<a href="redirectSearchHomeBtn.php"><button id="buton">Home</button></a>
+
 <form action="search.php" method="post">
 <div class="container">
 	<input  id="SearchBar" type="text" name="Search" placeholder="Caută...">
@@ -55,5 +57,6 @@ $min=1;
 </body>
 
 
+</script>
 
 </html>
