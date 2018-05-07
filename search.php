@@ -68,14 +68,19 @@ $min=1;// minim caracter
 
 <form action="search.php" method="post">
 <div class="container">
-	<input  id="SearchBar" type="text" name="Search" placeholder="Caută...">
-	<button id="Search" name="Submit" type="submit">
+	<input id="SearchBar" type="text" name="Search" placeholder="Caută..."/>
+	<button id="Search"  name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
+	
+	<div class="checkbox">
+	<input type="checkbox" name="It" value='1'/>IT
+	<input type="checkbox" name="Automatizari" value='2'/>Automatizari
 	</div>
+	</div>
+</form>
 <?php echo("$output"); ?>
 </body>
 
 
-</script>
 
 </html>
