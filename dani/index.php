@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php include 'connection.php'; ?>
+<?php 
+
+?>
+
 
 <html lang="en">
  <head>
@@ -20,20 +23,18 @@
 		<a href="signup.php"><button class="Butoane" type="button" title="Sign-Up"><i class="fa fa-address-card"></i></button></a>
 	</form>
 </ul> </div>
-<div class="checkbox">
-	<ul>
-		<form>
-		 <input type="checkbox" name="it" value="it">IT
-		 <input type="checkbox" name="automatizari" value="automatizari">Automatizari
-		
-		 </form></ul></div>
-  <form>
 
-<form>
+		 
+<form action="search.php" method="post">
 <div class="container">
-	<input id="SearchBar" type="text" name="SearchBar" placeholder="Caută...">
-	<button id="Search" type="submit">
+	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
+	<button id="Search"  name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
+	
+	<div class="checkbox">
+	<input type="checkbox" name="It" value='1'>IT
+	<input type="checkbox" name="Automatizari" value='2'>Automatizari
+	</div>
 	</div>
 </form>
 
