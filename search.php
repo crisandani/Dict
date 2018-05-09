@@ -67,6 +67,7 @@ $min=1;// minim caracter
 <a href="redirectSearchHomeBtn.php"><button id="buton">Home</button></a>
 
 <form action="search.php" method="post">
+<<<<<<< HEAD
 
 	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
 	<button id="Search"  name="Submit" type="submit">
@@ -91,4 +92,22 @@ if((document.getElementById('it').checked ||document.getElementById('aut').check
 else document.getElementById('Toate').checked=true;
 }
 </script>
+=======
+<div class="container">
+	<input id="SearchBar" type="text" name="Search" placeholder="Caută..."/>
+	<button id="Search"  name="Submit" type="submit">
+	<i class="fa fa-search"></i></button>
+	
+	<div class="checkbox">
+	<input type="checkbox" name="It" value='1'/>IT
+	<input type="checkbox" name="Automatizari" value='2'/>Automatizari
+	</div>
+	</div>
+</form>
+<?php echo("$output"); ?>
+</body>
+
+
+
+>>>>>>> f37b2469d723a28ac0715c086bcd8c4a04f99e7c
 </html>
