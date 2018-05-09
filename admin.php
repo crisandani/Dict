@@ -2,9 +2,11 @@
 <?php 
  
 include'session.php';
-$sql='select first_name,last_name,e_mail,password,birthday from users';
+if($_SESSION['login_user']!='admin@yahoo.com')
+	 header("Location: indexLogat.php");
+//$sql='select first_name,last_name,e_mail,password,birthday from users';
 //$sql='select first_name,last_name,e_mail,password,birthday from users where first_name<>"Admin"';
-//$sql='select first_name,last_name,e_mail,password,birthday from users where first_name not like"%Admin"';
+$sql='select first_name,last_name,e_mail,password,birthday from users where first_name not like"%Admin"';
 $result=mysqli_query($db,$sql);
 /*
 if(mysqli_num_rows($result))
@@ -20,6 +22,7 @@ if(mysqli_num_rows($result))
 	var_dump($a);
 	$matrice[5][5];*/
 	$aux=array();
+	$ceva=array();
 $l=$k=0;
 	while($row=mysqli_fetch_array($result)){
 		
@@ -52,6 +55,7 @@ $l=$k=0;
   <div id="myDropdown" class="dropdown-content">
   <p id="Hi">Salut, <?php echo $_SESSION['nume']; ?><p>
     <a href="logout.php">Log Out</a>
+	
    
   </div>
 </div>
@@ -66,18 +70,26 @@ $l=$k=0;
 	<th>Birthday</th>
   </tr>
   <?php
- 
-for ($i = 0;$i<$k;$i++) {
+
+$p=2;
+for ($i = 0;$i<$k;$i++){ 
+echo $k." ";
+
+$ceva=$aux[$p];
+
 
     echo "<tr>";
 	
-    for ($j=0;$j<$k;$j++)
-        
+    for ($j=0;$j<5;$j++)
+		
+        {
+			
             echo "  <td>".$aux[$l++]."</td>\n";
+		}
 			echo '  <td> <div>
 		<ul>
 		<form action="sterge.php" method="post">
-		 <input class="Sterge" type="submit" name="sterge" value="sterge">
+		 <button class="Sterge" type="submit" name="sterge" value='.$ceva.' onclick="validate()">Sterge</button>
 		 
 		
 		 </form></ul></div> </td>';
@@ -86,7 +98,9 @@ for ($i = 0;$i<$k;$i++) {
         
 
     echo "</tr>";
-}
+	$p+=5;
+};
+
 
 
 ?></table>
@@ -130,6 +144,20 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+
+
+function validate()
+{
+	conf = confirm("Sigur stergi acest utilizator ?");
+	if (conf)
+		var t=0;
+	else{
+		alert("Nu s-a sters");
+		event.preventDefault();
+		
+	}
 }
 </script>
   

@@ -1,19 +1,26 @@
+
 <?php
 include'session.php';
 
-if($_POST['sterge']!='')
+
+
+if(isset($_POST['confirm']))
+	alert("ce ");
+if(isset($_POST['sterge']))
 {
 
-    echo "ok";
+    $user=$_POST['sterge'];
 
+
+
+   $result=$db->query("delete from users where e_mail='$user'");
+   if($result){
+	   alert("Utilizatorul ".$user." s-a sters ! ");
+   }
 }
+header("Location: admin.php");
 
-else
 
-{
 
-    echo "Nu se va sterge ";
-
-} 
 
 ?>
