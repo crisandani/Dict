@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php 
-
-?>
-
-
 <html lang="en">
  <head>
   <meta charset="UTF-8">
@@ -24,24 +19,31 @@
 	</form>
 </ul> </div>
 
-		 
 <form action="search.php" method="post">
-<div class="container">
+
 	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
 	<button id="Search"  name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
-	
+	</form>
+	<form>
 	<div class="checkbox">
-	<input type="checkbox" name="It" value='1'>IT
-	<input type="checkbox" name="Automatizari" value='2'>Automatizari
+	<input  onChange="uncheck()" type="checkbox"id="Toate" name="Toate" checked>Toate
+	<input onChange="uncheck()" type="checkbox" id="it" name="It" value="1" >IT
+	<input onChange="uncheck()" type="checkbox" id="aut" name="Automatizari" value='2' >Automatizari
 	</div>
-	</div>
-</form>
-
-  
+	</form>
+	
+	
 
 
 
   </body>
+    <script>
+function uncheck(){
+if((document.getElementById('it').checked ||document.getElementById('aut').checked )==true)
+	document.getElementById('Toate').checked=false;
+else document.getElementById('Toate').checked=true;
+}
+</script>
 
 </html>﻿

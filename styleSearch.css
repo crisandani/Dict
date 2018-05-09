@@ -1,6 +1,5 @@
  body{
     background-color:#202a3f;
-	/*background-color:#e84118;*/
  }
  #eroare{
 position:absolute;
@@ -13,6 +12,8 @@ font-size:250%;
 	 color:red;
  }
  #nume{
+	
+	
 	color:#e84118;
 	text-shadow:0 0 20px #e84118;
 	font-size:200%;
@@ -24,7 +25,7 @@ font-size:250%;
 #buton{
 	position:absolute;
 	top:0%;
-	height:59px;
+	height:10%;
 	background-color: #e84118;
     color: white;
     padding: 16px;
@@ -41,9 +42,8 @@ font-size:250%;
 	position:absolute;
 	left:8%;
 	top:0%;
+	height:10%;
 	width:92%;
-	height:59px;
-	padding:10px;
 	font-size:20px;
 	letter-spacing:3px;
 	text-align:center;
@@ -56,7 +56,7 @@ font-size:250%;
 	position:absolute;
 	background:transparent;
 	width:4%;
-	height:59px;
+	height:10%;
 	padding:13px;
 	font-size:20px;
 	border:none;
@@ -64,6 +64,12 @@ font-size:250%;
 	left:96%;
 	outline:none;
 	cursor: pointer;
+}
+.checkbox{
+	color:white;
+	position:absolute;
+	list-style-type:none;
+	left:48%;
 }
 #SearchBar:focus{
 	background:white;

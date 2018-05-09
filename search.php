@@ -12,11 +12,12 @@ $min=1;// minim caracter
 	$search = mysqli_real_escape_string($db,$search);
 		
 		//verifica daca sunt selectate ambele capitole sau nici unul
-		if((isset($_POST['It'])&&isset($_POST['Automatizari']))||(!isset($_POST['It'])&&!isset($_POST['Automatizari'])))
-		{
+		
+		if((!isset($_POST['It'])&&!isset($_POST['Automatizari']))) //---------- asa merge
+		//if(isset($_POST['Toate'])) ---- asa nu ?!?!?!?!?!?!?!?!?
 			$query=mysqli_query($db,"SELECT * FROM words WHERE name LIKE '%$search%'") or die(mysql_error());
 			
-		}else{
+		else{
 			//verifica daca este selectat cap. it
 			if(isset($_POST['It']))
 			{
@@ -28,7 +29,6 @@ $min=1;// minim caracter
 				$capitol=$_POST['Automatizari']; 
 			
 				}
-				//var_dump($capitol);
 				$query=mysqli_query($db,"SELECT words.* from (words JOIN capitol_words ON words.id=capitol_words.word_id) join capitol on capitol.id= capitol_words.capitol_id WHERE words.name like '%$search%' and capitol_words.capitol_id=$capitol") or die(mysql_error());
 		}
 		
@@ -67,15 +67,28 @@ $min=1;// minim caracter
 <a href="redirectSearchHomeBtn.php"><button id="buton">Home</button></a>
 
 <form action="search.php" method="post">
-<div class="container">
-	<input  id="SearchBar" type="text" name="Search" placeholder="Caută...">
-	<button id="Search" name="Submit" type="submit">
+
+	<input id="SearchBar" type="text" name="Search" placeholder="Caută...">
+	<button id="Search"  name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
+	</form>
+	<form>
+	<div class="checkbox">
+	<input  onChange="uncheck()" type="checkbox"id="Toate" name="Toate"	checked>Toate
+	<input onChange="uncheck()" type="checkbox" id="it" name="It" value="1" >IT
+	<input onChange="uncheck()" type="checkbox" id="aut" name="Automatizari" value='2' >Automatizari
 	</div>
+	</form>
+	
+	
 <?php echo("$output"); ?>
 </body>
 
-
+<script>
+function uncheck(){
+if((document.getElementById('it').checked ||document.getElementById('aut').checked )==true)
+	document.getElementById('Toate').checked=false;
+else document.getElementById('Toate').checked=true;
+}
 </script>
-
 </html>
