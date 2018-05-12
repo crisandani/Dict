@@ -40,9 +40,11 @@ include'session.php';
 	<button id="Search"  name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
 	</div>
-	<div class="checkbox">
-	<input type="checkbox" name="It" value="1">IT
-	<input type="checkbox" name="Automatizari" value='2'>Automatizari
+	<div class="box">
+	<p>It</p>
+	<input type="checkbox" class="checkbox" name="It" value='1'>
+	<p>Automatizari</p>
+	<input type="checkbox" class="checkbox" name="Automatizari" value='2'>
 	</div>
 	</div>
 </form>

@@ -4,23 +4,9 @@
 include'session.php';
 if($_SESSION['login_user']!='admin@yahoo.com')
 	 header("Location: indexLogat.php");
-//$sql='select first_name,last_name,e_mail,password,birthday from users';
-//$sql='select first_name,last_name,e_mail,password,birthday from users where first_name<>"Admin"';
 $sql='select first_name,last_name,e_mail,password,birthday from users where first_name not like"%Admin"';
 $result=mysqli_query($db,$sql);
-/*
-if(mysqli_num_rows($result))
-    {
 
-       $row=mysqli_fetch_row($result);
-		
-	}
-	
-	var_dump($result);
-	
-	$a=mysqli_affected_rows($result);
-	var_dump($a);
-	$matrice[5][5];*/
 	$aux=array();
 	$ceva=array();
 $l=$k=0;
@@ -44,7 +30,7 @@ $l=$k=0;
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
    <link rel="stylesheet" href="styleAdmin.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <title>Index</title>
+ <title>Admin</title>
 </head>
 
  <body>
@@ -59,8 +45,25 @@ $l=$k=0;
    
   </div>
 </div>
-	
+
+<div id="divBtn">
+<button class="btns"  onclick="showModif()">Modificate</button>
+<button class="btns" onclick="showUseri()">Useri</button>
+<button class="btns"  onclick="showCuvNoi()">Cuvinte Noi</button>
+</div>
+
+<!-----------------completeaza aici---------------------->
+<div id="cuvNou" style="top:20%; display:none;">
+</div>
+
+
+<div id="modif" style="top:20%; display:none;">
+</div>
+<!-------------completeaza mai sus ---------------->
+
+	<!---------------------- Afisare useri -------------------------------->
 </ul> </div>
+<div id="useri" style="top:20%; display:none;">
 <table>
 <tr>
     <th>Firstname</th>
@@ -103,35 +106,13 @@ $ceva=$aux[$p];
 
 
 
-?></table>
-
-<!--<div class="checkbox">
-	<ul>
-		<form>
-		 <input type="checkbox" name="it" value="it">IT
-		 <input type="checkbox" name="automatizari" value="automatizari">Automatizari
-		
-		 </form></ul></div>
-  <form>
-
-
-  <form>
-<div class="container">
-	<input id="SearchBar" type="text" name="SearchBar" placeholder="Caută...">
-	<button id="Search" type="submit">
-	<i class="fa fa-search"></i></button>
-	</div>
-</form>-->
-
-
-
+?></table></div>
+<!-------------------------- sfarsit afisare useri ------------------------------>
 <script>
-
+<!-----------------------Buton Dropdown------------------->
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
@@ -147,7 +128,7 @@ window.onclick = function(event) {
 }
 
 
-
+<!----------validare stergere useri ----------------->
 function validate()
 {
 	conf = confirm("Sigur stergi acest utilizator ?");
@@ -158,7 +139,24 @@ function validate()
 		event.preventDefault();
 		
 	}
+}<!---------------------------Toggle Butoane---------------------->
+function showUseri() {
+  document.getElementById('useri').style.display="block";
+   document.getElementById('modif').style.display="none";
+    document.getElementById('cuvNou').style.display="none";
 }
+function showModif() {
+  document.getElementById('useri').style.display="none";
+  document.getElementById('modif').style.display="none";
+  document.getElementById('cuvNou').style.display="block";
+}
+function showCuvNoi() {
+  document.getElementById('useri').style.display="none";
+  document.getElementById('modif').style.display="none";
+  document.getElementById('cuvNou').style.display="block";
+}
+
+
 </script>
   
 

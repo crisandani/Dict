@@ -32,10 +32,6 @@ $min=1;// minim caracter
 				$query=mysqli_query($db,"SELECT words.* from (words JOIN capitol_words ON words.id=capitol_words.word_id) join capitol on capitol.id= capitol_words.capitol_id WHERE words.name like '%$search%' and capitol_words.capitol_id=$capitol") or die(mysql_error());
 		}
 		
-	
-	
-	
-	
 	if(mysqli_num_rows($query) > 0) {
 	
 	while($rezultate=mysqli_fetch_array($query)){
@@ -43,7 +39,7 @@ $min=1;// minim caracter
 		$short=$rezultate['short'];
 		$description=$rezultate['description'];
 		
-		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p>';
+		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><a href="Termeni.php"<button id="BtnModif" name="modifica" type="button">Modifica</a>';
 		
 	}
 									}
@@ -67,15 +63,22 @@ $min=1;// minim caracter
 <a href="redirectSearchHomeBtn.php"><button id="buton">Home</button></a>
 
 <form action="search.php" method="post">
+
 <div class="container">
 	<input  id="SearchBar" type="text" name="Search" placeholder="Caută...">
 	<button id="Search" name="Submit" type="submit">
 	<i class="fa fa-search"></i></button>
 	</div>
-<?php echo("$output"); ?>
+	
+	<div class="box" action="search.php" method="post">
+	<p>It</p>
+	<input type="checkbox" class="checkbox" name="It" value='1'>
+	<p>Automatizari</p>
+	<input type="checkbox" class="checkbox" name="Automatizari" value='2'>
+	</div></form>
+<?php echo("$output");  ?>
+
+
+
 </body>
-
-
-</script>
-
 </html>
