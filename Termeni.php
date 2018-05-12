@@ -16,8 +16,8 @@
 <input name="CampNume" class="camp" type="text" value="<?php echo "" ?>">
 <p class="p">Descriere Scurta:</p>
 <input name="CampShort" class="camp" type="text" value="<?php echo "" ?>">
-<p name="CampDescriere" class="p">Descriere:</p>
-<textarea class="camp" rows="13" cols="130" value="<?php echo "" ?>"></textarea>
+<p  class="p">Descriere:</p>
+<textarea class="camp" name="CampDescriere" rows="13" cols="130" value="<?php echo "" ?>"></textarea>
 <input type="submit" value="Submit">
 </form>
 
