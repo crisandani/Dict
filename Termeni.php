@@ -44,8 +44,6 @@ echo '<p class="p">Descriere Scurta:</p>';
 echo'<input name="CampShort" class="camp" type="text" value="'.$short.'"/>';
 echo'<p  class="p">Descriere:</p>';
 echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130">'.$description.'</textarea><br>';
-echo'<input type="radio" name="capitol" value="1"><span>It<span>';
-echo'<input type="radio" name="capitol" value="2"><span>Automatizari<span>';
 echo'<button id="BtnSubmit" type="submit" value="Submit" name="modifica">Modifica</button>';
 echo'</form>';
 }
@@ -68,8 +66,8 @@ echo '<p class="p">Descriere Scurta:</p>';
 echo'<input name="CampShort" class="camp" type="text" value="here..."/>';
 echo'<p  class="p">Descriere:</p>';
 echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130">Here....</textarea><br>';
-echo'<input type="radio" name="capitol" value="1"><span>It<span>';
-echo'<input type="radio" name="capitol" value="2"><span>Automatizari<span>';
+echo'<input type="checkbox" name="capitol1" value="1"><span>It<span>';
+echo'<input type="checkbox" name="capitol2" value="2"><span>Automatizari<span>';
 echo'<button id="BtnSubmit" type="submit" value="Submit" name="adauga">Adauga</button>';
 echo'</form>';
 
