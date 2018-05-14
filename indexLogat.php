@@ -20,7 +20,7 @@ include'session.php';
  
  
 
- <div class="dropdown">
+
 
 <div class="dropdown">
 
@@ -28,11 +28,12 @@ include'session.php';
   <div id="myDropdown" class="dropdown-content">
   <p id="Hi">Salut, <?php echo $_SESSION['nume']; ?><p>
     <a href="logout.php">Log Out</a>
+	<a href="Termeni.php"<button class="dropbtn" id="BtnAdd" name="adauga">Adauga Termeni</button></a>
    
   </div>
 </div>
 	
-</ul> </div>
+
 
 <form action="search.php" method="post">
 <div class="container">
