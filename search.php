@@ -1,5 +1,7 @@
 <?php
-	include("connection.php");
+	
+	include('connection.php');
+	session_start();
 	
 $min=1;// minim caracter
 	if(isset($_POST['Search']))
@@ -38,9 +40,9 @@ $min=1;// minim caracter
 		$name=$rezultate['name'];
 		$short=$rezultate['short'];
 		$description=$rezultate['description'];
-		
+		if(isset($_SESSION['login_user']))
 		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifica</button></form>';
-		
+		else $output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p>';
 	}
 									}
 									else {
