@@ -29,7 +29,7 @@ include'session.php';
   <p id="Hi">Salut, <?php echo $_SESSION['nume']; ?><p>
     <a href="logout.php">Log Out</a>
 	<form  action="Termeni.php" method="post">
-	<button class="dropbtn" id="BtnAdd" name="adauga">Adauga Termeni </button>
+	<button class="dropbtn" id="BtnAdd" value="Add" name="adauga">Adauga Termeni </button>
    </form>
   </div>
 </div>
