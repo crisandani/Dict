@@ -28,8 +28,13 @@ include'session.php';
   <div id="myDropdown" class="dropdown-content">
   <p id="Hi">Salut, <?php echo $_SESSION['nume']; ?><p>
     <a href="logout.php">Log Out</a>
+<<<<<<< HEAD
 	<form action="Termeni.php" method="post">
 	<button class="dropbtn" id="BtnAdd" name="adauga">Adauga Termeni </button>
+=======
+	<form  action="Termeni.php" method="post">
+	<button class="dropbtn" id="BtnAdd" value="Add" name="adauga">Adauga Termeni </button>
+>>>>>>> 2cdd58ee05dd33d6671e38cd75e5fc106ae06cd4
    </form>
   </div>
 </div>
