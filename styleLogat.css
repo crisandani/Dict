@@ -1,6 +1,5 @@
  body{
     background-color:#202a3f;
-	/*background-color:#e84118;*/
    }
    .dropbtn {
 	   
@@ -32,6 +31,13 @@
     text-decoration: none;
     display: block;
 }
+#BtnAdd{
+	color:white;
+    padding: 12px 16px;
+	background-color: #202a3f;
+	min-width: 160px;
+}
+
 #Hi{
 	color: #f93b3b;
     padding: 12px 16px;
@@ -40,7 +46,7 @@
 	border:none;
 	border-bottom:1px solid #e84118;
 }
-.dropdown-content a:hover {background-color: #f93b3b}
+.dropdown-content a:hover,#BtnAdd:hover{background-color: #f93b3b}
 .show {display:block;}
 
 .butoane1{
