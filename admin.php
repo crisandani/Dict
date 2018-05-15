@@ -6,7 +6,7 @@ if($_SESSION['login_user']!='admin@yahoo.com')
 	 header("Location: indexLogat.php");
 $sql='select first_name,last_name,e_mail,password,birthday from users where first_name not like"%Admin"';
 $result=mysqli_query($db,$sql);
-
+$output='';
 	$aux=array();
 	$ceva=array();
 $l=$k=0;
@@ -17,7 +17,25 @@ $l=$k=0;
 		$k++;
 		}
 	}
+		$sql='select name,short,description from words_add';
+		$result=mysqli_query($db,$sql);
+		while($row=mysqli_fetch_array($result)){
+			//$capitol=$row['capitol_id'];
+			//$capitol = ($capitol==1? "It" : "Automatizari");
+			//$id=$row['id'];
+		$output.='<div id="cuvN"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
+			<button id="BtnDa" nume="butonDa" value='.$row['name'].' >Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
+			
+		}
 		
+		$sql='select name,short,description from words_modify';
+		$result=mysqli_query($db,$sql);
+		while($row=mysqli_fetch_array($result)){
+			$outputM='';
+		$outputM.='<div id="cuvM"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
+			<button id="BtnDa" nume="butonDa" value='.$row['name'].' >Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
+			
+		}
 		
 	
 	
@@ -53,18 +71,21 @@ $l=$k=0;
 </div>
 
 <!-----------------completeaza aici---------------------->
-<div id="cuvNou" style="top:20%; display:none;">
+<div id="cuvNou" style="display:none;">
+<?php echo("$output"); ?>
 </div>
 
 
-<div id="modif" style="top:20%; display:none;">
+<div id="modif">
+<?php echo("$outputM"); ?>
 </div>
 <!-------------completeaza mai sus ---------------->
 
 	<!---------------------- Afisare useri -------------------------------->
 </ul> </div>
-<div id="useri" style="top:20%; display:none;">
-<table>
+<div id="useri" style="display:none;">
+<table style="width:100%;	position:absolute;
+top:15%;">
 <tr>
     <th>Firstname</th>
     <th>Lastname</th> 
@@ -76,7 +97,7 @@ $l=$k=0;
 
 $p=2;
 for ($i = 0;$i<$k;$i++){ 
-echo $k." ";
+
 
 $ceva=$aux[$p];
 
@@ -147,8 +168,8 @@ function showUseri() {
 }
 function showModif() {
   document.getElementById('useri').style.display="none";
-  document.getElementById('modif').style.display="none";
-  document.getElementById('cuvNou').style.display="block";
+  document.getElementById('modif').style.display="block";
+  document.getElementById('cuvNou').style.display="none";
 }
 function showCuvNoi() {
   document.getElementById('useri').style.display="none";

@@ -63,10 +63,25 @@
 	background-color:#ef4c23;
 	text-shadow:0 0 20px white;
 }
-
-
+/*--------------------------------------------------------------------- CUVINTE NOI -------------------------------------------------------------------*/
+#name{color:#e84118;font-size:250%;}
+#short{color:#42f453; font-size:150%;}
+#description{color:#fff;}
+/*--------------------------------------------------------------------- BUTOANE VALIDARE -------------------------------------------------------------------*/
+#BtnDa{height:30px;
+	width:80px;
+	background-color:#15c605; color: white;
+	border:none;
+	font-size:12px; text-align:center; text-decoration:none;		
+	cursor:pointer;}
+	
+#BtnNu{height:30px; width:80px;
+	background-color:#c60505; color: white;
+	border:none;
+	font-size:12px; text-align:center; text-decoration:none;	
+	cursor:pointer;}
 /* ------------------------------------------------------------------------------- USERI --------------------------------------------------------*/
-table, tr,th, td {
+table {
 	border-spacing: 15px;
     text-align: center;
 	color: white;
