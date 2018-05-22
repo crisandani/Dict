@@ -24,7 +24,7 @@ $l=$k=0;
 			//$capitol = ($capitol==1? "It" : "Automatizari");
 			//$id=$row['id'];
 		$output.='<div id="cuvN"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" nume="butonDa" value='.$row['name'].' >Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
+			<button id="BtnDa" name="butonDa" value='.$row['name'].' type="submit">Y</button><button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</button></form></div>';//.$capitol;
 			
 		}
 		
@@ -33,7 +33,7 @@ $l=$k=0;
 		while($row=mysqli_fetch_array($result)){
 			$outputM='';
 		$outputM.='<div id="cuvM"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" nume="butonDa" value='.$row['name'].' >Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
+			<button id="BtnDa" name="butonDa" value='.$row['name'].' type="submit">Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
 			
 		}
 		

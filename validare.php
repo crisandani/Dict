@@ -1,17 +1,17 @@
 <?php
-session_start();
+include('session.php');
+alert("s-a apasat");
 if(isset($_POST['butonDa'])){
 	
-	$name=$_POST['butonDa'];
-	$sql='SELECT FROM words_add WHERE name like "%'.$name.'"';
-	$query=mysqli_query($db,$sql);
-	$rezultat=mysqli_fetch_array($query);
-	$short=$rezultat['short'];
-	$description=$rezultat['description'];
 	
-	$sql='INSERT INTO words (`name`,`short`,`description`) VALUES ("'.$name.'","'.$short.'","'.$description.'")';
-	mysqli_query($db,$sql);
-	
+	$nume=$_POST['butonDa'];
+	alert($nume);
+	//$sql1='select * from words_add where words.add.name=words_add.name='.$name.'';	
+	$sql='insert into words (name,short,description) SELECT name,short,description from words_add where words_add.name="'.$nume.'"';	
+$result=mysqli_query($db,$sql);
+	if($result){
+		alert($sql);
+	}
 }
 	
 	
