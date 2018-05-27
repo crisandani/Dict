@@ -20,7 +20,7 @@ if(isset($_POST['modifica']))
 $nume=$_POST['modifica'];
 //alert("nume:".$nume."");
 
-$sql='select name,short,description from words where name like "%'.$nume.'"';
+$sql='select id,name,short,description from words where name like "%'.$nume.'"';
 $query=mysqli_query($db,$sql);
 if(mysqli_num_rows($query) > 0) {
 	
@@ -28,6 +28,7 @@ if(mysqli_num_rows($query) > 0) {
 		$name=$rezultate['name'];
 		$short=$rezultate['short'];
 		$description=$rezultate['description'];
+		$id=$rezultate['id'];
 		
 	}
 									}
@@ -44,7 +45,7 @@ echo '<p class="p">Descriere Scurta:</p>';
 echo'<input name="CampShort" class="camp" type="text" value="'.$short.'"/>';
 echo'<p  class="p">Descriere:</p>';
 echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130">'.$description.'</textarea><br>';
-echo'<button id="BtnSubmit" type="submit" value="Submit" name="modifica">Modifica</button>';
+echo'<button id="BtnSubmit" type="submit" value="'.$id.'" name="modifica">Modifica</button>';
 echo'</form>';
 }
 
@@ -60,12 +61,12 @@ else
 
 echo'<form action="adauga.php" method="post">';
 echo'<p class="p">Nume:</p>';
-echo' <input name="CampNume" class="camp" type="text" value="here...">';
+echo' <input name="CampNume" class="camp" type="text" value="" placeholder="Nume"> ';
 
 echo '<p class="p">Descriere Scurta:</p>';
-echo'<input name="CampShort" class="camp" type="text" value="here..."/>';
+echo'<input name="CampShort" class="camp" type="text" value="" placeholder="Descriere Scurta"/>';
 echo'<p  class="p">Descriere:</p>';
-echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130">Here....</textarea><br>';
+echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130" placeholder="Descriere" ></textarea><br>';
 echo'<input type="checkbox" name="capitol1" value="1"><span>It<span>';
 echo'<input type="checkbox" name="capitol2" value="2"><span>Automatizari<span>';
 echo'<button id="BtnSubmit" type="submit" value="Submit" name="adauga">Adauga</button>';

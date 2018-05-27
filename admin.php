@@ -17,23 +17,24 @@ $l=$k=0;
 		$k++;
 		}
 	}
-		$sql='select name,short,description from words_add';
+	
+	//---------------- ADAUGARE -----------------------
+		$sql='select id,name,short,description from words_add';
 		$result=mysqli_query($db,$sql);
 		while($row=mysqli_fetch_array($result)){
-			//$capitol=$row['capitol_id'];
-			//$capitol = ($capitol==1? "It" : "Automatizari");
-			//$id=$row['id'];
+			
 		$output.='<div id="cuvN"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" name="butonDa" value='.$row['name'].' type="submit">Y</button><button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</button></form></div>';//.$capitol;
+			<button id="BtnDa" name="butonDa" value='.$row['id'].' type="submit">Y</button><button id="BtnNu" name="butonNu" value='.$row['id'].' type="submit">N</button></form></div>';
 			
 		}
-		
-		$sql='select name,short,description from words_modify';
+		//------------ MODIFICARE ---------------
+		$sql='select id,name,short,description from words_modify';
 		$result=mysqli_query($db,$sql);
+		$outputM='';
 		while($row=mysqli_fetch_array($result)){
-			$outputM='';
+			
 		$outputM.='<div id="cuvM"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" name="butonDa" value='.$row['name'].' type="submit">Y<button id="BtnNu" nume="butonNu" value='.$row['name'].' >N</form></div>';//.$capitol;
+			<button id="BtnDa" name="butonDaM" value='.$row['id'].' type="submit">Y<button id="BtnNu" name="butonNuM" value='.$row['id'].'>N</form></div>';//.$capitol;
 			
 		}
 		
