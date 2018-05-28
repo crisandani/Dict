@@ -24,7 +24,7 @@ $l=$k=0;
 		while($row=mysqli_fetch_array($result)){
 			
 		$output.='<div id="cuvN"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" name="butonDa" value='.$row['id'].' type="submit">Y</button><button id="BtnNu" name="butonNu" value='.$row['id'].' type="submit">N</button></form></div>';
+			<button id="BtnDa" name="butonDa" value='.$row['id'].' type="submit">Da</button><button id="BtnNu" name="butonNu" value='.$row['id'].' type="submit">Nu</button></form></div>';
 			
 		}
 		//------------ MODIFICARE ---------------
@@ -34,7 +34,7 @@ $l=$k=0;
 		while($row=mysqli_fetch_array($result)){
 			
 		$outputM.='<div id="cuvM"><span id="name">'.$row['name'].'  </span><span id="short">'.$row['short'].'  </span><p><span id="description">'.$row['description'].'</span></p><form action="validare.php" method="post">
-			<button id="BtnDa" name="butonDaM" value='.$row['id'].' type="submit">Y<button id="BtnNu" name="butonNuM" value='.$row['id'].'>N</form></div>';//.$capitol;
+			<button id="BtnDa" name="butonDaM" value='.$row['id'].' type="submit">Da<button id="BtnNu" name="butonNuM" value='.$row['id'].'>Nu</form></div>';//.$capitol;
 			
 		}
 		

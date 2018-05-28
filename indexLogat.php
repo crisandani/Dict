@@ -30,7 +30,7 @@ include'session.php';
   
 
 	<form  action="Termeni.php" method="post">
-	<button class="dropbtn" id="BtnAdd" value="Add" name="adauga">Adauga Termeni </button>
+	<button class="dropbtn" id="BtnAdd" value="Add" name="adauga">Adaugă Termeni </button>
 
    </form>
     <a href="logout.php">Log Out</a>

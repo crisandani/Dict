@@ -46,7 +46,7 @@ echo'<input name="CampShort" class="camp" type="text" value="'.$short.'"/>';
 echo'<p  class="p">Descriere:</p>';
 echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130">'.$description.'</textarea><br>';
 echo'<button id="BtnSubmit" type="submit" value="'.$id.'" name="modifica">Modifica</button>';
-echo'<input type="file" name="myimage"/>';
+//echo'<input type="file" name="myimage"/>';
 echo'</form>';
 }
 
@@ -70,7 +70,7 @@ echo'<textarea class="camp" name="CampDescriere" rows="13" cols="130" placeholde
 echo'<input type="checkbox" name="capitol1" value="1"><span>It<span>';
 echo'<input type="checkbox" name="capitol2" value="2"><span>Automatizari<span>';
 echo'<button id="BtnSubmit" type="submit" value="Submit" name="adauga">Adauga</button>';
-echo'<input type="file" name="myimage"/>';
+//echo'<input type="file" name="myimage"/>';
 echo'</form>';
 
 	}

@@ -41,7 +41,7 @@ $min=1;// minim caracter
 		$short=$rezultate['short'];
 		$description=$rezultate['description'];
 		if(isset($_SESSION['login_user']))
-		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifica</button></form>';
+		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifică</button></form>';
 		else $output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p>';
 	}
 									}
