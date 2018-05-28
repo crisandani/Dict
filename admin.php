@@ -67,7 +67,7 @@ $l=$k=0;
 
 <div id="divBtn">
 <button class="btns"  onclick="showModif()">Modificate</button>
-<button class="btns" onclick="showUseri()">Useri</button>
+<button class="btns" onclick="showUseri()">Utilizatori</button>
 <button class="btns"  onclick="showCuvNoi()">Cuvinte Noi</button>
 </div>
 
@@ -154,8 +154,10 @@ window.onclick = function(event) {
 function validate()
 {
 	conf = confirm("Sigur stergi acest utilizator ?");
-	if (conf)
+	if (conf){
 		var t=0;
+	alert("S-a sters");
+	}
 	else{
 		alert("Nu s-a sters");
 		event.preventDefault();

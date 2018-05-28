@@ -3,9 +3,6 @@
 include'session.php';
 
 
-
-if(isset($_POST['confirm']))
-	alert("ce ");
 if(isset($_POST['sterge']))
 {
 

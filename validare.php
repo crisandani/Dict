@@ -41,6 +41,7 @@ $result=mysqli_query($db,$sql);
 			$result=mysqli_query($db,$sql);
 	if($result){
 		alert("Sters din tabelul provizoriu !");
+		echo'<script>window.location="admin.php";</script>';
 	}
 	}
 }
@@ -49,11 +50,12 @@ $result=mysqli_query($db,$sql);
 //BUTON NU -- ADAUGARE
 	if(isset($_POST['butonNu'])){
 	$nume=$_POST['butonNu'];		
-		
-		$sql='delete from words_add where words_add.id="'.$id.'"';
+		alert($nume);
+		$sql='delete from words_add where words_add.id="'.$nume.'"';
 			$result=mysqli_query($db,$sql);
 	if($result){
 		alert("Sters din tabelul provizoriu !");
+		echo'<script>window.location="admin.php";</script>';
 	}
 	}
 //BUTON DA ---- MODIFICARE
@@ -67,6 +69,7 @@ if(isset($_POST['butonDaM'])){
 			$result=mysqli_query($db,$sql);
 	if($result){
 		alert("Sters din tabelul provizoriu !");
+		echo'<script>window.location="admin.php";</script>';
 	}
 	}
 }
@@ -79,6 +82,7 @@ if(isset($_POST['butonDaM'])){
 	if($result){
 		alert("Sters din tabelul provizoriu !");
 		// header("Location: admin.php");
+		echo'<script>window.location="admin.php";</script>';
 	}
 	}
 ?>
