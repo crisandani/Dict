@@ -1,6 +1,6 @@
 <?php
 include('session.php');
-alert("s-a apasat");
+//alert("s-a apasat");
 if(isset($_POST['butonDa'])){
 	
 	// BUTON DA -- ADAUGARE

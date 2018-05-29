@@ -40,15 +40,19 @@ $min=1;// minim caracter
 		$name=$rezultate['name'];
 		$short=$rezultate['short'];
 		$description=$rezultate['description'];
+		$link=$rezultate['link'];
+		alert($link);
 		if(isset($_SESSION['login_user']))
-		$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifică</button></form>';
-		else $output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p>';
+	//$output .= '<div id="nume" onclick="click1($link);">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifică</button></form>';
+$output .= '<div id="nume">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p><form action="Termeni.php" method="post"><button value='.$name.' name="modifica" type="submit">Modifică</button></form>';
+		else $output .= '<div id="nume" onclick="click1()">'.$name.'</div><div id="short">'.$short.'</div><p>'.$description.'</p>';
 	}
 									}
 									else {
 									$output='<div id="eroare">'."Nu s-au gasit rezultate !".'</div>'; }
 	}
 	}
+	
    ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +63,7 @@ $min=1;// minim caracter
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
    <link rel="stylesheet" href="styleSearch.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
@@ -78,8 +83,18 @@ $min=1;// minim caracter
 	<p>Automatizari</p>
 	<input type="checkbox" class="checkbox" name="Automatizari" value='2'>
 	</div></form>
-<?php echo("$output");  ?>
-
+	<!--<div id="nume" onclick="location.href='https://ro.wikipedia.org/wiki/Memorie_cache'">'.$name.'</div>
+	<div id="nume" onclick="click1()">'.$name.'</div> -->
+<?php echo $output ;  ?>
+<!--
+<script type="text/javascript">
+function click1(link){
+	 //window.location="http://www.tutorialspoint.com";
+	 
+	 window.location.href=link;
+	}
+</script>
+-->
 
 
 </body>
